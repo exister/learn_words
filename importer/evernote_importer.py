@@ -48,8 +48,6 @@ def parse_evernote_exported_file(source_path, result_path):
                 result.setdefault(en.lower().strip(), ru.strip())
             elif en_alternative and len(en_alternative.strip()) > 2:
                 result.setdefault(en.lower().strip(), en_alternative.strip())
-            else:
-                result.setdefault(en.lower().strip(), u'')
 
     with file(os.path.abspath(os.path.expanduser(result_path)), "w") as fp:
         for k, v in result.iteritems():
